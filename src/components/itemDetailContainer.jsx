@@ -35,7 +35,6 @@ const ItemDetailContainer = () => {
     const [cartCount, setCartCount] = useState(0);
 
     useEffect(() => {
-        // Simula carga asincrónica
         new Promise((resolve) => {
         setTimeout(() => {
             const prod = products.find((p) => p.id === parseInt(productId));
