@@ -18,11 +18,8 @@ function App() {
             <ItemListContainer bienvenida="¡Bienvenidos a Cursos Los Chefcitos Online!" />
           }
         />
-        <Route path="/category/:categoryId" element={<ItemListContainer />} />
-
-        <Route path="/product/:productId" element={<ItemDetailContainer />} />
-
-        <Route path="*" element={<PageNotFound />} />
+        <Route path="/" element={<ItemListContainer />} />
+        <Route path="/detail/:id" element={<ItemDetailContainer />} />
       </Routes>
     </BrowserRouter>
   );

@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Navbar, Container, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import CartWidget from './CartWidget';
 
 function NavBar() {
-    return ( 
+    const [cartCount, setCartCount] = useState(0);
+
+    const handleUpdateCart = (count) => {
+        setCartCount(count);
+    };
+
+    return (
         <Navbar bg="dark" variant="dark" expand="lg">
         <Container>
             <Navbar.Brand as={Link} to="/">
@@ -15,15 +22,17 @@ function NavBar() {
                 <Nav.Link as={Link} to="/">
                 Home
                 </Nav.Link>
-                <Nav.Link as={Link} to="/">Cursos</Nav.Link>
+                <Nav.Link as={Link} to="/">
+                Cursos
+                </Nav.Link>
                 <Nav.Link as={Link} to="#">¿Quiénes somos?</Nav.Link>
                 <Nav.Link as={Link} to="#">Registrate</Nav.Link>
             </Nav>
-            <CartWidget />
+            <CartWidget count={cartCount} />
             </Navbar.Collapse>
         </Container>
         </Navbar>
     );
-    }
+}
 
 export default NavBar;

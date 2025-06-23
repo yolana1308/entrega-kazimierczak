@@ -1,16 +1,15 @@
-import React, { useState } from 'react';
-import CartWidget from 'react'
+import React from 'react';
 
 const CartWidget = ({ count }) => {
     return (
         <div style={{ cursor: 'pointer', position: 'relative' }}>
-        <span style={{ fontSize: 'px' }}>🛒</span>
+        <span style={{ fontSize: '24px' }}>🛒</span>
         {count > 0 && (
             <span
             style={{
                 position: 'absolute',
-                top: '10px',
-                right: '10px',
+                top: '-5px',
+                right: '-5px',
                 background: 'gray',
                 borderRadius: '50%',
                 width: '20px',
@@ -19,7 +18,7 @@ const CartWidget = ({ count }) => {
                 alignItems: 'center',
                 justifyContent: 'center',
                 color: 'white',
-                fontSize: '10rem',
+                fontSize: '12px',
             }}
             >
             {count}
@@ -27,6 +26,6 @@ const CartWidget = ({ count }) => {
         )}
         </div>
     );
-};
+    };
 
 export default CartWidget;
